@@ -18,11 +18,11 @@ iptables -A INPUT -i eth0 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 #которые было инициированы уже установленным ESTABLISHED соединением), но связанные с ним
 # -j 	--jump {действие} 	применяет одно из действий accept, drop, reject и другие
 iptables -A INPUT -i eth0 -j DROP
-Проверьте наличие пакета SSH на клиентах: 
+#Проверьте наличие пакета SSH на клиентах: 
 rpm -qi openssh-server
-Запустите sshd на клиенте: 
+#Запустите sshd на клиенте: 
 service sshd start
-remote port forwarding
+#remote port forwarding
 ssh -R 5900:localhost:5900 guest@joes-pc
-local port forwarding
+#local port forwarding
 ssh -L 8080:www.ubuntuforums.org:80 <host>
